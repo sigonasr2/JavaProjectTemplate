@@ -3,7 +3,7 @@ Provides a Java pipeline for building applications and deploying a JAR with ease
 
 The system will also use the SigScript updating system to keep files up-to-date.
 
-##Usage:
+## Usage:
 **./sig** - Shows a menu with all scripts. Example output:
 ```
     gitpod /workspace/JavaProjectTemplate (main) $ ./sig
