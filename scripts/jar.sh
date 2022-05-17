@@ -1,3 +1,4 @@
+#Builds a runnable jar file using ${MAIN_CLASS} as an entry point and then runs the newly generated jar.
 rm -Rf bin/*
 javac -Xlint:unchecked -cp src -d bin ${PROJECT_DIR}/${PROJECT_NAME}.java
 printf "\n\n\nGenerating Manifest...\n\n"

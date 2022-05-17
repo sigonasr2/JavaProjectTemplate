@@ -19,7 +19,12 @@ if [ -z "$1" ]
     echo ""
     echo ""
     echo "  Command List:"
-    ls -1 ./scripts | sed -e 's/\.sh$//' | sed -e 's/^/    /'
+    FILES=$(ls -1 ./scripts | sed -e 's/\.sh$//' | sed -e 's/^/    /')
+    for f in $FILES
+    do
+      DESC="$(head -n1 ./scripts/$f.sh)"
+      printf "\n\t%-15s%-65s" $f "${DESC:1}"
+    done
     echo ""
     exit
 fi

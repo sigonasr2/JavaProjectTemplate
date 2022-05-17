@@ -1,3 +1,4 @@
+#Builds and runs the project.
 rm -Rf out/*
 javac -Xlint:unchecked -cp ${PROJECT_DIR}/.. -d ${OUT_DIR} ${PROJECT_DIR}/*.java
 printf "\n\n\nRunning Program...\n\n"
