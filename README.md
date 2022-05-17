@@ -18,9 +18,10 @@ The system will also use the SigScript updating system to keep files up-to-date.
     =====================================================
 
     Command List:
-        build
-        clean
-        commit
-        jar
+
+            build          Builds and runs the project.                                     
+            clean          Cleans up and removes unused files.                              
+            commit         Adds a commit message and pushes project to github repository.   
+            jar            Builds a runnable jar file using ${MAIN_CLASS} as an entry point and then runs the newly generated jar.
 ```
 Configuration is modified at the top of the script file while the command list includes all included modules inside of `scripts`.
