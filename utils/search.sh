@@ -9,7 +9,8 @@ function search() {
         else 
             echo "$1$g is a file"
             if [ $g != "md5" ]; then
-                md5sum < $1$g >> $1md5
+                SUM=$(md5sum < $1$g)
+                echo "$g:$SUM" >> $1md5
             else
                 echo "  md5 file, ignoring..."
             fi
@@ -28,8 +29,11 @@ function check() {
         if [ "$DIFF" != "" ] 
         then
             echo " Differences detected!"
-            for g in $FILES2
+            
+            while IFS= read -r line
             do
+                IFS=':' read -ra split <<< $line
+                g="${split[0]}"
                 if [ "$g" != "md5" ]; then
                     if [ -f $1$g ];
                     then
@@ -54,9 +58,12 @@ function check() {
                             echo "===Could not find directory, assuming regular scripts directory exists."
                             curl -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/sigonasr2/SigScript/main/$1$g --output scripts/$g
                         fi
+                    else 
+                        echo "++==Downloading $1$g..."
+                        curl -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/sigonasr2/SigScript/main/$1$g --output $1$g
                     fi
                 fi
-            done
+            done < /tmp/out
         fi
     fi
     for g in $FILES2
