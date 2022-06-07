@@ -1,3 +1,5 @@
+export AUTO_UPDATE=true
+
 source utils/define.sh
 
 define PROJECT_NAME "JavaProjectTemplate"

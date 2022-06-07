@@ -1,4 +1,6 @@
-build.sh:377a432ffbd63b53322d1451a214201d  -
-clean.sh:96ce35f2d2dcb555421e00a6afda23ca  -
-commit.sh:b186d649fa17c68926fe1caec4a7216c  -
-jar.sh:cce5e429168700490f9c413b665d13d6  -
+build.sh:22308eae5fd9c88aa16fef54cf03ae21  -
+clean.sh:668a2f9b568c55f6a044a509315032f6  -
+commit.sh:5e4448db9ad48e72ec3a1ff4f5763b41  -
+jar.sh:343cf505530401fb696296bc25a9b090  -
+release.sh:b1b62203411b18d0fec1db3dc2e5a061  -
+update.sh:3be721658983183efa395984acd96b03  -
