@@ -8,10 +8,11 @@ function define() {
   eval export "$1"='$value'
 }
 
-if [[ $(pwd) != *"SigScript" ]]; then
+if [[ $(pwd) != *"SigScript" && $AUTO_UPDATE = "true" ]]; then
   source utils/search.sh
 
   find . -type f -name md5 -delete
+  find . -type f -name filelist -delete
 
   #Check for hashes
   FILES=$(cat utils/.updateDirectories)

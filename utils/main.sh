@@ -13,10 +13,10 @@ if [ -z "$1" ]
     echo ""
     echo ""
     echo "  Command List:"
-    FILES=$(ls -1A ./$LANGUAGE/scripts | sed -e 's/\.sh$//' | sed -e 's/^/    /')
+    FILES=$(ls -1A ./$LANGUAGE/scripts 2>/dev/null | sed -e 's/\.sh$//' | sed -e 's/^/    /')
     for f in $FILES
     do
-      if [ $f != "md5" ]; then
+      if [ -f "./$LANGUAGE/scripts/$f.sh" ]; then
         DESC="$(head -n1 ./$LANGUAGE/scripts/$f.sh)"
         printf "\n\t%-15s%-65s" $f "${DESC:1}"
       fi
